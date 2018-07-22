@@ -1,0 +1,29 @@
+
+---
+spring :   
+  jmx:
+    enabled: false
+  application:
+    name: ms-gateway
+    
+server:
+  context-path: '/gw'
+  port: ${port}
+  
+---
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: CONFIGSERVER
+      
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: ${eureka.host}      
+  
+  
+ 
